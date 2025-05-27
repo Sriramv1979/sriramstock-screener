@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
-from app.data_fetcher import fetch_data
-from app.indicators import add_indicators
-from app.screener import is_long_entry, is_short_entry
+from data_fetcher import fetch_data
+from indicators import add_indicators
+from screener import is_long_entry, is_short_entry
 
 st.title("NSE F&O Momentum Screener")
 
