@@ -12,13 +12,16 @@ long_candidates = []
 short_candidates = []
 
 for symbol in symbols:
-    df = fetch_data(symbol)
-    df = add_indicators(df)
-    latest = df.iloc[-1]
-    if is_long_entry(latest):
-        long_candidates.append(symbol)
-    elif is_short_entry(latest):
-        short_candidates.append(symbol)
+    try:
+        df = fetch_data(symbol)
+        df = add_indicators(df)
+        latest = df.iloc[-1]
+        if is_long_entry(latest):
+            long_candidates.append(symbol)
+        elif is_short_entry(latest):
+            short_candidates.append(symbol)
+    except Exception as e:
+        st.error(f"Error processing {symbol}: {e}")
 
 st.subheader("Top 5 Long Candidates")
 st.write(long_candidates[:5])
