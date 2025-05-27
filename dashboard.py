@@ -6,7 +6,7 @@ from screener import is_long_entry, is_short_entry
 
 st.title("NSE F&O Momentum Screener")
 
-symbols = ['RELIANCE.NS', 'INFY.NS', 'TCS.NS', 'ICICIBANK.NS', 'HDFCBANK.NS']  # Replace with F&O list
+symbols = ['RELIANCE.NS', 'INFY.NS', 'TCS.NS', 'ICICIBANK.NS', 'HDFCBANK.NS']
 
 long_candidates = []
 short_candidates = []

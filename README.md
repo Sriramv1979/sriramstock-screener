@@ -1,11 +1,7 @@
-# NSE F&O Momentum Screener (Flattened Structure)
+# NSE F&O Momentum Screener
 
-This project identifies top momentum stocks in the NSE F&O list and provides long/short signals using EMA, RSI, and Parabolic SAR.
+This app screens NSE F&O stocks for momentum using 50 EMA, RSI, and Parabolic SAR indicators.
 
-## How to Run
-
-1. Install dependencies:
-   pip install -r requirements.txt
-
-2. Launch the dashboard:
-   streamlit run dashboard.py
+## Run Locally
+1. pip install -r requirements.txt
+2. streamlit run dashboard.py
