@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import yfinance as yf
-import pandas_ta as ta
+import ta
 
 # Helper functions
 def fetch_data(symbol, interval='5m', period='1d'):
@@ -9,10 +9,9 @@ def fetch_data(symbol, interval='5m', period='1d'):
     return data
 
 def add_indicators(df):
-    df['EMA50'] = ta.ema(df['Close'], length=50)
-    df['RSI'] = ta.rsi(df['Close'], length=14)
-    psar = ta.psar(df['High'], df['Low'], df['Close'])
-    df['SAR'] = psar['PSARl_0.02_0.2'] if 'PSARl_0.02_0.2' in psar.columns else psar.iloc[:, -1]
+    df['EMA50'] = ta.trend.ema_indicator(df['Close'], window=50)
+    df['RSI'] = ta.momentum.rsi(df['Close'], window=14)
+    df['SAR'] = ta.trend.psar(df['High'], df['Low'], df['Close']).psar()
     return df
 
 def is_long_entry(row):
